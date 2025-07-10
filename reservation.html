@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Reservation Form – Saffron Flame</title>
+  <link rel="stylesheet" href="format.css" />
+  <link rel="stylesheet" href="layout.css" />
+  <script src="script.js" defer></script>
+  <style>
+    /* Required: Style for focus on valid and invalid input */
+    input:focus:valid, select:focus:valid, textarea:focus:valid {
+      border: 2px solid green;
+    }
+    input:focus:invalid, select:focus:invalid, textarea:focus:invalid {
+      border: 2px solid red;
+    }
+  </style>
+</head>
+<body onload="showDateTime()">
+
+  
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="reservation.html">Reservation</a></li>
+    </ul>
+  </nav>
+
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="reservation.html">Reservation</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1>Make a Reservation</h1>
+    <p id="currentDateTime"></p>
+  </header>
+
+  <form>
+    <!-- Required: Multiple field sets -->
+    <fieldset>
+      <legend>Personal Information</legend>
+      <!-- Required: text input -->
+      <label for="fullname">Full Name:</label>
+      <input type="text" id="fullname" name="fullname" required minlength="3" maxlength="30" pattern="[a-zA-Z\s]+" /><br>
+
+      <!-- Required: mobile input type -->
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required /><br>
+
+      <!-- Required: date/time input -->
+      <label for="date">Reservation Date & Time:</label>
+      <input type="datetime-local" id="date" name="date" required />
+    </fieldset>
+
+    <fieldset>
+      <legend>Preferences</legend>
+      <!-- Required: radio buttons -->
+      <p>Seating Preference:</p>
+      <label><input type="radio" name="seating" value="indoor" required /> Indoor</label>
+      <label><input type="radio" name="seating" value="outdoor" /> Outdoor</label><br>
+
+      <!-- Required: checkbox -->
+      <p>Special Options:</p>
+      <label><input type="checkbox" name="options" value="birthday" /> Birthday Setup</label>
+      <label><input type="checkbox" name="options" value="anniversary" /> Anniversary</label><br>
+
+      <!-- Required: range slider -->
+      <label for="satisfaction">Satisfaction (1-10):</label>
+      <input type="range" id="satisfaction" name="satisfaction" min="1" max="10" /><br>
+
+      <!-- Required: spinner -->
+      <label for="guests">Number of Guests:</label>
+      <input type="number" id="guests" name="guests" min="1" max="20" /><br>
+
+      <!-- Required: datalist -->
+      <label for="meal">Preferred Dish:</label>
+      <input list="meals" id="meal" name="meal" />
+      <datalist id="meals">
+        <option value="Kabab Koobideh" />
+        <option value="Fesenjan" />
+        <option value="Ghormeh Sabzi" />
+      </datalist><br>
+
+      <!-- Required: selection list -->
+      <label for="occasion">Occasion:</label>
+      <select id="occasion" name="occasion">
+        <option value="none">-- Select One --</option>
+        <option value="birthday">Birthday</option>
+        <option value="anniversary">Anniversary</option>
+        <option value="other">Other</option>
+      </select><br>
+
+      <!-- Required: textarea -->
+      <label for="notes">Additional Notes:</label><br>
+      <textarea id="notes" name="notes" rows="4" cols="40"></textarea>
+    </fieldset>
+
+    <!-- Required: submit and reset buttons -->
+    <input type="submit" value="Reserve Now" onclick="confirmSubmission()" />
+    <input type="reset" value="Reset Form" />
+  </form>
+
+  <footer>
+    <p>&copy; 2025 Saffron Flame. All rights reserved.</p>
+  </footer>
+</body>
+</html>

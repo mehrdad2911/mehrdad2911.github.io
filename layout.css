@@ -1,0 +1,64 @@
+/* ========== Floated Layout (for navigation or optional blocks) ========== */
+nav {
+  background-color: #fff0d9;
+  padding: 10px;
+  overflow: auto; /* Handles float overflow */
+}
+
+nav ul {
+  float: left; /* Floated layout example */
+}
+
+/* ========== Relative and Absolute Positioning ========== */
+header {
+  position: relative;
+  padding: 20px;
+  background-color: #fef4e8;
+}
+
+/* ========== Gallery Grid Layout ========== */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Images inside gallery */
+.gallery-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Figure and Caption */
+.gallery-grid figure {
+  margin: 0;
+  text-align: center;
+}
+
+.gallery-grid figcaption {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #444;
+}
+
+/* ========== Overflow Example ========== */
+section {
+  overflow: auto;
+  padding: 1rem;
+}
+
+/* ========== Flexbox for Responsive Nav on Mobile ========== */
+@media screen and (max-width: 768px) {
+  nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav li {
+    margin: 10px 0;
+  }
+}

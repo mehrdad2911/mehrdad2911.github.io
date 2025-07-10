@@ -1,0 +1,33 @@
+/* Format background, text, and lists */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fff8dc; /* light saffron yellow */
+  color: #333; /* dark gray */
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2 {
+  color: maroon;
+}
+
+a {
+  color: maroon;
+  text-decoration: none;
+}
+
+/* Pseudo classes for links */
+a:hover {
+  color: orange;
+}
+
+/* Contextual selector example */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+nav li {
+  display: inline;
+  margin-right: 15px;
+}
